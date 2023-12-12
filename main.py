@@ -12,22 +12,15 @@ DESTINATIONS = [(30+9, 20), (37+9, 40), (22, 34-9), (22+7, 44)]
 obstacles, destinations, trace_points = [],[], []
 ANGLE = 90
 detect = 5
+state = [0,0,0,0]
+i = 0
 
 figure, ax = grid(GRID_SIZE, OBSTACLE_POSITIONS, DESTINATIONS, obstacles, destinations)
 robot = plt.Circle((0, 0), 1.5, color="orange")
 wedge = draw_detection_area(Wedge, 0, 0, 0, 1.5 + detect, ANGLE, ax)
-ax.add_artist(robot)
-
-
-
-
-
-
-
-i = 0
-state = [0,0,0,0]
 collision_message = ax.text(0.05, 0.95, "No Collision", transform=ax.transAxes, color='green')
 log = ax.text(0.75, 0.95, str(state), transform=ax.transAxes, color='green')
+ax.add_artist(robot)
 
 while True:
 
