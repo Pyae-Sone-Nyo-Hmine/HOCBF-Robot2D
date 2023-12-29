@@ -22,7 +22,7 @@ def grid(size,OBSTACLE_POSITIONS, DESTINATIONS, obstacles, destinations):
 
     # Display destinations on the grid
     for dest in DESTINATIONS:
-        destination = plt.Circle(dest, 1, color='green')
+        destination = plt.Circle(dest, 0.8, color='green')
         destinations.append(destination)
         ax.add_artist(destination)
         ax.text(dest[0], dest[1], 'D', color='white', ha='center', va='center')

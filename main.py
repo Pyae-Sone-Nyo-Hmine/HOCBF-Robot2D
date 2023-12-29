@@ -6,9 +6,10 @@ from Robot import update_robot, draw_detection_area
 from Sensing import sensing
 from Execute import execute
 
+
 GRID_SIZE = 50
-OBSTACLE_POSITIONS = [(30,20),(37,40),(22,34)]
-DESTINATIONS = [(30+9, 20), (37+9, 40), (22, 34-9), (22+7, 44)]
+OBSTACLE_POSITIONS = [(32,25),(28,35),(30,40)]
+DESTINATIONS = [(38, 40), (39, 35), (30, 15), (20, 28)]
 obstacles, destinations, trace_points = [],[], []
 ANGLE = 90
 detect = 5
@@ -16,7 +17,7 @@ state = [0,0,0,0]
 i = 0
 
 figure, ax = grid(GRID_SIZE, OBSTACLE_POSITIONS, DESTINATIONS, obstacles, destinations)
-robot = plt.Circle((0, 0), 1.5, color="orange")
+robot = plt.Circle((0, 0), 1.2, color="orange")
 wedge = draw_detection_area(Wedge, 0, 0, 0, 1.5 + detect, ANGLE, ax)
 collision_message = ax.text(0.05, 0.95, "No Collision", transform=ax.transAxes, color='green')
 log = ax.text(0.75, 0.95, str(state), transform=ax.transAxes, color='green')
@@ -52,5 +53,5 @@ while True:
     # currently waiting have been processed
     figure.canvas.flush_events()
 
-    plt.pause(0.1)
+    plt.pause(0.05)
     i += 1

@@ -142,7 +142,7 @@ def execute(state, dst, obstacles, robot, coe):
     # Initialize A as an empty list
     A_list = []
 
-    # Append the constant constraints
+    # Append the constraints
     A_list.append([LgV, 0, -1, 0])
 
     if pobsA_color == 'red':
@@ -181,9 +181,6 @@ def execute(state, dst, obstacles, robot, coe):
                 [0, 0, 0, 2 * psc]])
     
     F = np.array([0, 0, 0, 0])
-
-
-
 
 
     # Define the objective function for the optimizer

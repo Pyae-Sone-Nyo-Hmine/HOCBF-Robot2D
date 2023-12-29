@@ -3,7 +3,7 @@ import numpy as np
 def sensing(robot, obstacles, sensing_distance, robot_orientation, detection_angle):
     robot_center = robot.center
     robot_radius = robot.radius
-    detection_angle_rad = np.radians(detection_angle) / 2  # Convert to radians and halve (as it's spread across both sides)
+    detection_angle_rad = np.radians(detection_angle)  # Convert to radians and halve (as it's spread across both sides)
 
     for obstacle in obstacles:
         obstacle_center = obstacle.center
@@ -32,3 +32,5 @@ def sensing(robot, obstacles, sensing_distance, robot_orientation, detection_ang
                 return obstacle
 
     return False
+
+
