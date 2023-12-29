@@ -22,9 +22,11 @@ collision_message = ax.text(0.05, 0.95, "No Collision", transform=ax.transAxes, 
 log = ax.text(0.75, 0.95, str(state), transform=ax.transAxes, color='green')
 ax.add_artist(robot)
 
+coe = [0.7535,1.0046,0.6664,1.0267]
+
 while True:
 
-    new_state = execute(state, DESTINATIONS[0], obstacles, robot, ANGLE)
+    new_state = execute(state, DESTINATIONS[0], obstacles, robot, coe)
     new_x,new_y,theta,speed = new_state
     update_robot(new_state,robot, wedge,trace_points, ax, obstacles,ANGLE, sensing)
     state = new_state
