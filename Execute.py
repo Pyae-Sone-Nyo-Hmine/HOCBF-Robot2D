@@ -4,9 +4,9 @@ from scipy.integrate import solve_ivp # solve diff eq
 from scipy.optimize import minimize # qp
 from Dynamics import dynamics
 
-detect = 5
+detect = 7
 ANGLE = 90
-OBSTACLE_POSITIONS = [(30,20),(37,40),(22,34)]
+OBSTACLE_POSITIONS = [(32,25),(28,35),(30,40)]
 
 def execute(state, dst, obstacles, robot, coe):
     global u, b_c, set1, set2, theta_d, pobsA, pobsB, pobsC

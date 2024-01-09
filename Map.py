@@ -16,7 +16,7 @@ def grid(size,OBSTACLE_POSITIONS, DESTINATIONS, obstacles, destinations):
 
     # Display obstacles on the grid
     for pos in OBSTACLE_POSITIONS:
-        obstacle = plt.Circle(pos, 7, color='lightblue')
+        obstacle = plt.Circle(pos, 6, color='lightblue')
         obstacles.append(obstacle)
         ax.add_artist(obstacle)
 
